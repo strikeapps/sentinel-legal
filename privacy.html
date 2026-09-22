@@ -18,16 +18,23 @@
 </head>
 <body>
 <h1>SENTINEL Privacy Policy</h1>
-<p class="muted">Last updated: 10 August 2026</p>
+<p class="muted">Last updated: 20 September 2026</p>
 
 <p>SENTINEL ("SENTINEL," "we," "us") is a tactical mapping and team-coordination
 app for search-and-rescue, public-safety, and professional field teams. This policy
 explains what data the app handles, how it is used, and the choices you have.
-Questions: <a href="mailto:strike_apps@strike-apps.com">privacy@strike-apps.com</a>.</p>
+Questions: <a href="mailto:privacy@strike-apps.com">privacy@strike-apps.com</a>.</p>
 
 <h2>1. Data we collect</h2>
 <ul>
   <li><strong>Email address</strong> — to create your account and sign you in.</li>
+  <li><strong>Sign in with Apple</strong> — if you choose it instead of (or in addition
+      to) an email and password, Apple gives us an identifier that is unique to you and
+      to SENTINEL, and the email address you choose to share. With Apple's
+      <em>Hide My Email</em> that is a private relay address and we never see your real
+      one. Your name, if you share it, is used only to pre-fill your display name. We do
+      not receive your Apple ID password, and Apple does not tell us anything about how
+      you use other apps.</li>
   <li><strong>Display name</strong> — the name teammates see for you in chat and on
       the shared map. You choose it and can change or clear it at any time.</li>
   <li><strong>Precise location</strong> — collected <em>only while you turn on
@@ -59,15 +66,27 @@ We do not use your data for advertising or profiling.</p>
 <p>Chat messages, position updates, and operational data are encrypted on your device
 and only decrypted on your teammates' devices, using standard cryptography
 (ChaCha20-Poly1305 with X25519 key agreement). Our relay server moves this content as
-opaque ciphertext and <strong>cannot read your messages or positions.</strong> All
-network traffic additionally uses TLS. Encryption keys are stored in the device
-Keychain and never leave your device.</p>
+opaque ciphertext and <strong>cannot read your messages or positions.</strong> The keys
+live in your device Keychain and never leave your device, so nothing we move or hold is
+readable by us. All network traffic additionally uses TLS.</p>
+<p>Content is passed straight to your teammates' connected devices as it arrives. When a
+teammate is not connected, a message for them is <strong>held on our server, still
+encrypted</strong>, until their device collects it &mdash; and deleted the moment it
+does. Anything never collected is deleted automatically after 7 days. This covers
+messages and shared map items only: <strong>position updates are never held</strong>, and
+neither are file transfers. For a teammate on a satellite connection, traffic is also
+held in server memory only &mdash; never written to disk &mdash; for at most five minutes
+until their device collects it.</p>
+<p>You can switch this off in the app (<em>Chat &rarr; Catch up after signal loss</em>).
+With it off, anything waiting for you is discarded and you receive traffic only while you
+are connected.</p>
 
 <h2>5. Third parties</h2>
 <p>We rely on a small number of service providers strictly to operate the app:</p>
 <ul>
   <li><strong>Apple</strong> — App Store distribution and subscription billing (we never
-      receive your payment card details).</li>
+      receive your payment card details), and Sign in with Apple if you choose to use
+      it.</li>
   <li><strong>Our hosting/relay infrastructure</strong> — operated for us to route
       encrypted team traffic; it does not have access to decrypted content.</li>
   <li><strong>Transactional email provider</strong> — to send account-verification and
@@ -77,8 +96,12 @@ Keychain and never leave your device.</p>
 <h2>6. Data retention &amp; deletion</h2>
 <p>You can permanently delete your account from inside the app
 (<em>Account tool → Delete Account</em>). Deletion removes your profile and group
-memberships from our server. You can also stop location sharing at any time without
-deleting your account.</p>
+memberships from our server, along with any encrypted messages still waiting for your
+devices. If you used Sign in with Apple, deleting your account also revokes
+SENTINEL's authorization with Apple. You can also stop location sharing at any time without deleting your account.</p>
+<p>Undelivered messages (&sect;4) are deleted as soon as the recipient's device collects
+them, and in every case within 7 days. Signing out on a device also deletes whatever was
+waiting for it.</p>
 
 <h2>7. Security</h2>
 <p>We protect data with end-to-end encryption of content, TLS in transit, and Keychain
@@ -92,6 +115,6 @@ collect data from children under 13.</p>
 <p>We may update this policy; material changes will be posted here with a revised date.</p>
 
 <h2>10. Contact</h2>
-<p><a href="mailto:strike_apps@strike-apps.com">privacy@strike-apps.com</a></p>
+<p><a href="mailto:privacy@strike-apps.com">privacy@strike-apps.com</a></p>
 </body>
 </html>
